@@ -1,0 +1,648 @@
+
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+========================================= */
+
+:root {
+    --azul: #123F73;
+    --verde: #83BE1D;
+    --dorado: #E7CF70;
+    --fondo: #F1F9F8;
+    --blanco: #FFFFFF;
+    --texto: #263238;
+    --texto-suave: #65727B;
+
+    --sombra: 0 8px 30px rgba(18, 63, 115, 0.10);
+    --radio: 16px;
+    --transicion: all 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font: inherit;
+}
+
+.contenedor {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   2. ENCABEZADOS DE SECCIÓN
+========================================= */
+
+.seccion-encabezado {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.seccion-encabezado span {
+    display: block;
+    color: var(--verde);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.seccion-encabezado h2 {
+    color: var(--azul);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   3. HEADER Y NAVEGACIÓN
+========================================= */
+
+.header {
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .contenedor {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
+.navegacion ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navegacion a {
+    color: var(--azul);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transicion);
+}
+
+.navegacion a:hover {
+    color: var(--verde);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    color: var(--azul);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   4. PORTADA PRINCIPAL
+========================================= */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18, 63, 115, 0.90),
+            rgba(18, 63, 115, 0.35)
+        ),
+        url("/img/portada.jfif") center/cover no-repeat;
+    color: var(--blanco);
+}
+
+.hero-contenido {
+    max-width: 650px;
+    padding: 100px 0;
+}
+
+.hero-etiqueta {
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.1;
+    margin: 20px 0 10px;
+}
+
+.hero h2 {
+    color: var(--dorado);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin: 25px 0 35px;
+    max-width: 550px;
+}
+
+
+/* =========================================
+   5. BOTONES
+========================================= */
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    border-radius: 50px;
+    background-color: var(--verde);
+    color: var(--blanco);
+    font-weight: 700;
+    transition: var(--transicion);
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--azul);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+
+/* =========================================
+   6. VERSÍCULO
+========================================= */
+
+.versiculo {
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.versiculo h2 {
+    color: var(--dorado);
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+
+.versiculo blockquote {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.versiculo p {
+    margin-top: 15px;
+    color: var(--dorado);
+    font-weight: 700;
+}
+
+
+/* =========================================
+   7. QUIÉNES SOMOS
+========================================= */
+
+.nosotros {
+    padding: 100px 0;
+}
+
+.nosotros-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.nosotros-texto h3 {
+    color: var(--azul);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   8. MISIÓN Y VISIÓN
+========================================= */
+
+.mision-vision {
+    padding: 100px 0;
+    background-color: var(--blanco);
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tarjeta {
+    background-color: var(--blanco);
+    padding: 35px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+}
+
+.tarjeta h3 {
+    color: var(--azul);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    color: var(--texto-suave);
+}
+
+
+/* =========================================
+   9. REUNIONES
+========================================= */
+
+.reuniones {
+    padding: 100px 0;
+}
+
+.reuniones-contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.reunion {
+    border-left: 5px solid var(--verde);
+}
+
+
+/* =========================================
+   10. ACTIVIDADES
+========================================= */
+
+.actividades {
+    padding: 100px 0;
+    background-color: var(--blanco);
+}
+
+.actividades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.actividad {
+    padding: 0;
+    overflow: hidden;
+}
+
+.actividad img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.actividad-contenido {
+    padding: 25px;
+}
+
+
+/* =========================================
+   11. GALERÍA - COVERFLOW
+========================================= */
+
+.galeria {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.galeria-grid {
+    --slide-width: min(620px, 65vw);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: max-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 0;
+}
+
+.galeria-grid img {
+    width: var(--slide-width);
+    height: 380px;
+    flex: 0 0 var(--slide-width);
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    opacity: 0.35;
+    filter: brightness(0.65);
+    transform: scale(0.78);
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease,
+        filter 0.8s ease;
+}
+
+.galeria-grid img.activa {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+    z-index: 2;
+}
+
+
+/* =========================================
+   12. CONTACTO
+========================================= */
+
+.contacto {
+    padding: 100px 20px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    text-align: center;
+}
+
+.contacto .seccion-encabezado h2 {
+    color: var(--blanco);
+}
+
+.contacto .seccion-encabezado span {
+    color: var(--dorado);
+}
+
+.contacto > .contenedor > p {
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   13. FOOTER
+========================================= */
+
+.footer {
+    background-color: #0C2B4D;
+    color: var(--blanco);
+    padding: 65px 0 20px;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 40px;
+}
+
+.footer-identidad img {
+    width: 140px;
+    margin-bottom: 15px;
+}
+
+.footer-identidad h2 {
+    color: var(--dorado);
+}
+
+.footer-enlaces h3 {
+    margin-bottom: 15px;
+}
+
+.footer-enlaces li {
+    margin-bottom: 10px;
+}
+
+.footer-enlaces a:hover {
+    color: var(--verde);
+}
+
+.footer-inferior {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #C8D3DC;
+}
+
+
+/* =========================================
+   14. TABLETS
+========================================= */
+
+@media (max-width: 992px) {
+
+    .header .contenedor {
+        gap: 15px;
+    }
+
+    .navegacion ul {
+        gap: 12px;
+    }
+
+    .navegacion a {
+        font-size: 0.8rem;
+    }
+
+    .nosotros-contenido {
+        gap: 30px;
+    }
+
+    .actividades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-grid {
+        --slide-width: 65vw;
+    }
+
+}
+
+
+/* =========================================
+   15. TELÉFONOS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .header .contenedor {
+        min-height: 75px;
+    }
+
+    .logo img {
+        width: 145px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navegacion {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--blanco);
+        box-shadow: var(--sombra);
+    }
+
+    .navegacion.activa {
+        display: block;
+    }
+
+    .navegacion ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5%;
+    }
+
+    .navegacion li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-contenido {
+        padding: 75px 0;
+    }
+
+    .nosotros,
+    .mision-vision,
+    .reuniones,
+    .actividades,
+    .galeria,
+    .contacto {
+        padding: 70px 0;
+    }
+
+    .nosotros-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-imagen img {
+        height: 280px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .actividades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-grid {
+        --slide-width: 78vw;
+        gap: 10px;
+    }
+
+    .galeria-grid img {
+        height: 260px;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+}
+
+
+/* =========================================
+   16. TELÉFONOS PEQUEÑOS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .contenedor {
+        width: 92%;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .seccion-encabezado {
+        margin-bottom: 35px;
+    }
+
+    .tarjeta {
+        padding: 25px;
+    }
+
+    .galeria-grid {
+        --slide-width: 82vw;
+    }
+
+    .galeria-grid img {
+        height: 220px;
+    }
+
+}
